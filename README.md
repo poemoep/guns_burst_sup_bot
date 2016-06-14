@@ -31,4 +31,4 @@ ver0.2から簡単な検索機能が付きました。
 足りない言葉がありましたら是非追加協力をお願いいたします。
 
 ##License
-このプログラムは[MITライセンス](https://opensource.org/licenses/MIT)に従います。
+このプログラムは[MITライセンス](./LICENSE.txt)に従います。
