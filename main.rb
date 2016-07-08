@@ -189,7 +189,7 @@ stream.filter(track: topics.join(",")) do |tweet|
 end
 
 rescue Exception => e
-	if (e == Twitter::Error::ClientError) && (e.message =~ /execution expired/)
+	if (e.message =~ /execution expired/) || (e.message =~/end of file reached/)
 		sleep 5
 		retry
 	end
