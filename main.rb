@@ -86,7 +86,7 @@ stream.filter(track: topics.join(",")) do |tweet|
 #        if (!tweet.retweeted_tweet? && !(tweet.reply?)) then
 	if(!tweet.retweeted_tweet? && tweet.text.index('@') != 0) then
 #	if(tweet.text.index("RT") != 0) then
-#            puts tweet.text
+#           puts tweet.text
 
             rest.retweet(tweet.id)
 		
