@@ -76,7 +76,8 @@ csv = EasyCSV.new()
 
 #puts "Client Setup finished"
 
-topics = ["#ガンスト3遠距離バースト"]
+topics = ["#ガンスト3遠距離バースト","＃ガンスト3遠距離バースト","#ガンスト3遠距離バースト","＃ガンスト3遠距離バースト"]
+#半角シャープ、全角シャープ、半角いげた、全角いげた
 #topics = ["#bunkai_bot_test"]
 
 begin
@@ -92,7 +93,7 @@ stream.filter(track: topics.join(",")) do |tweet|
 		
             text = String.new(tweet.text)
 	
-		    if(tweet.entities?) then
+            if(tweet.entities?) then
                 if(tweet.hashtags?) then
                     for j in 0..(tweet.hashtags.size - 1)
                         text.slice!("#"+ tweet.hashtags[j].text)
@@ -112,9 +113,9 @@ stream.filter(track: topics.join(",")) do |tweet|
             
             n = mecab.parse(text)
 
-		    while n do
-			    fe = csv.parse(n.feature)
-			    if(fe[1] == "ガンスト名詞") then
+            while n do
+                fe = csv.parse(n.feature)
+                if(fe[1] == "ガンスト名詞") then
                     case fe[2]
                     when "日時" then
                         case fe[3]
@@ -184,7 +185,7 @@ stream.filter(track: topics.join(",")) do |tweet|
         end
         end
 
-	    end
+	end
     end
 end
 
